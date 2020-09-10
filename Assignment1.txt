@@ -1,0 +1,261 @@
+Q1. Explore the following commands with various options, refer man pages for 
+    further help a) date b) cal c) bc d) echo e) who f) whoami g) logname g) uname h)
+    seq i) clear
+	
+Q2.	A) Create three directory a b and c and create a.txt,b.txt and c.txt
+	in each directory respectively and then copy c directory into the a.
+	Ans:- 	mkdir a
+			cd a
+			touch a.txt
+			cd ..
+			mkdir b
+			cd b
+			touch b.txt
+			cd ..
+			mkdir c
+			cd c
+			touch c.txt
+			cd ..
+			cp -r c a
+		
+	B)Move Directory b to c.
+	Ans:- mv b c
+	
+	C)Create alias of ls -lh command to your name.
+	Ans:- alias krishna="ls -lh"
+
+	D)Change Directory name a to cdac.
+	Ans:- mv a cdac
+	
+	
+Q3. A) Create five files file1.txt , file2.txt ,file3.txt file4.txt and
+    file5.txt with some text inside it. Search for 's' character
+    inside all the files using grep command.
+    Also Use cat to view all file content together.
+	Ans:- cat file1.txt
+			This is First file.
+			cat file2.txt
+			This is Second file.
+			cat file3.txt
+			This is Thrird file.
+			cat file4.txt
+			This is Fourth file.
+			cat file5.txt
+			This is Fifth file.
+			grep s file1.txt file2.txt file3.txt file4.txt file5.txt
+			
+			
+	B)Create file.txt using cat and edit that using nano editor.
+	Ans:-	cat > file.txt
+			nano ./file.txt	
+			Editing file using nano.
+			
+	c)Create 5 empty files using touch command
+	Ans:-	touch t1.txt t2.txt t3.txt t4.txt t5.txt
+
+	D)Remove previously created directory a , b and c.
+	Ans:- cd a
+			rm a.txt
+			cd c
+			rm c.txt
+			cd d..
+			rmdir c
+			cd ..
+			rmdir a
+			rmdir b
+		
+
+Q4. Create a file with some content using vi editor
+	a) Display the file using cat command
+	Ans:- vi name.txt
+			Krishna
+			cat name.txt
+	
+	b) Display line numbers along with content
+	Ans:- cat -n name.txt
+	
+	c) Display the file in reverse order using tac
+	Ans:- tac name.txt
+
+	d) Combine multiple files using cat command
+	Ans:- cat file1.txt file2.txt > newfile.txt
+
+
+Q5. Create Random some files and sub directories.
+	a) display files row wise, column wise, 1 per row
+	Ans:- column name.txt
+	
+	b) sort the files in ascending, descending order
+	Ans:- sort name.txt
+		  sort -r name.txt
+	
+	c) Create some hidden files and sub directories and display them using “ls -a”
+	Ans:- touch .hiddenFile
+		  ls -a
+	
+	d) Change time stamp of some files and directories using touch command and display the files using ls -t ls -rt
+	Ans:- touch -t 205001232359.59 name.txt
+		stat name.txt
+	
+	e) Recursive display contents of your home directory.
+		Ans:- ls -R
+		
+	f) display all attributes of files and directories using ls -l
+	Ans:- ls -l
+	
+	g) display attributes of a directory using ls -ld
+	Ans:- ls -ld
+	
+==================================================================================
+Q1. Create directory of your name and then create 4 files inside it named
+	a.txt, b.txt, c.txt and d.sh. And change the directory permission to
+	only user and also files permission to only user such that
+		a)user can read and write the file a.txt and b.txt
+		Ans:- mkdir Krishna
+			cd Krishna
+			touch a.txt b.txt c.txt d.sh
+			chmod 700 Krishna
+
+		b)user can write the file c.txt
+		Ans:- chmod 600 c.txt
+		
+		c)user can exectuable the file d.sh. Make Contents of file d.sh:
+			#/bin/sh
+			ls -lh
+			Ans:- chmod 100 d.sh 
+			
+Q2. Change the permission of the previous directory to executable only.
+	Analyze the output.
+	Ans:- chmod 100 Krishna
+	
+Q3. Change the permission of the previous directory to read only.
+	Analyze the output.
+	Ans:- chmod 400 Krishna
+	
+Q4. Use echo to list the all files of your home directory.
+	Ans:- echo *
+	
+Q5. Use echo to list the all files of /etc/ directory
+	Ans:- echo * /etc/
+	
+Q6. Use echo to list the all files of /etc/ directory with extension name .conf
+	Ans:- 
+
+Q7. Use echo to append your name to a.txt
+	Ans:- echo krishna > a.txt
+
+==================================================================================
+
+Note:Many operation might not work.Analyze them
+1.	Create Three level nested directory a,b and c
+	Ans:-	mkdir a
+			cd a
+			mkdir b
+			cd b
+			mkdir c
+
+		
+a)Create at least one hidden file in each directory
+	Ans:- cd a
+		  touch .a1.txt
+		  cd b
+		  touch .b1.txt
+		  cd c
+		  touch .c1.txt
+	
+b)Create at least one normal text file in each directory
+Ans:- cd a
+	  touch file1.txt
+	  cd b
+	  touch file2.txt
+	  cd c
+	  touch file3.txt
+
+c)Copy c into a
+Ans:-  cp -r a/b/c a
+	
+d)Copy file inside a into b
+Ans:- cp -r a/f1.txt a/b/c
+
+2.	Change the third level directory c permission to read only
+Ans:- chmod 444 c
+
+3.	Try copying third level c directory to outside of a
+Ans:- 
+
+4.	Create the directory  “data“ inside b
+Ans:- mkdikr a/b/data
+
+5.	Change the permission of b to read and write only
+Ans:- chmod 666 a/b
+
+6.	Create directory “data2”  inside b
+Ans:- mkdir a/b/data2
+
+7.	Create data.txt file inside b
+Ans:- touch a/b/data.txt
+
+8.	Rename the second level directory c to copied_dir
+Ans:-	cd a
+		mv c copied_dir
+
+9.	Change permission of copied_dir to only executable
+Ans:- chmod 111 a/copied_dir
+
+
+10.	Try ls on copied_dir
+Ans:- ls a/copied_dir
+
+11.	Try moving copied_dir to outside of a
+Ans:- 
+
+12.	Try moving data directory outside of a
+Ans:-
+
+13.	Now change the owner of the directory a to root
+Ans:- sudo chown root a
+		
+
+14.	Change permission of a to read write and executable to only user
+Ans:- 	sudo su
+		chmod 700 a
+
+15.	Try creating directory sample inside a
+Ans:-	sudo su
+		mkdir a/sample
+		
+16.	Create directory x outside a
+Ans:-	mkdir x
+
+17.	Try moving x inside a
+Ans:-	sudo su
+		mv x a
+
+18.	Create directory movies
+Ans:-	mkdir movies
+		
+19.	Change group of movies to sudo
+Ans:-	sudo chgrp sudo movies
+
+
+20.	Change group of movies to avahi
+Ans:- sudo addgroup avahi
+	  sudo chgrp avahi movies 
+
+21.	Try changing permission after changing ownership to root
+Ans:-  sudo su
+	   chmod 777 a
+
+22.	Try Changing permission after changing group to sudo without sudo
+Ans:-	  chmod 777 movies
+
+23.	Try Changing owner and group both to root
+Ans:-	sudo chown root file.txt
+		sudo chgrp root file.txt
+		
+24.	Try changinging permission
+Ans:-  sudo su
+		chmod 777 file1.txt
+
+25.	Try deleting the file
+Ans:-	  rm file.txt
