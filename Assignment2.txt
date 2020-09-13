@@ -8,39 +8,53 @@ done
 
 2. Write a menu based script to perform following string operations
 a) To find length of a string
-	Ans:- echo "enter the name"
-		read str
-		len=${#str}
-		echo $len
-		
 c) Copying string
-	Ans:- echo "Enter name"
-	read name
-	copyname=$name
-	echo $copyname
-	
 d) Concatenation of strings
-	Ans:- echo "Enter String 1"
-	read name1
-	echo "Enter String 2"
-	read name2
-	string=$name1" "$name2
-	echo "$string"
-	
 e) Compare two strings
-	Ans:- echo "Enter two strings"
-	read string1
-	read string2
-	if [ $string1 == $string2 ]; then
-			echo "String is equal"
-	else
-			echo "String is not equal"
-	fi
-	
 f) Reversing a string
-	Ans:-	echo "Enter string"
-	read name
-	echo "$name" | rev
+
+echo "Enter youur choice"
+echo "1) To find length of a string"
+echo "2) copying string"
+echo "3) Concatenation of string"
+echo "4)compare two string"
+echo "5) Reverse a string"
+read choice
+
+if [ $choice == 1 ]; then
+        echo "Enter the string"
+        read str
+        length=${#str}
+        echo $length
+elif [ $choice == 2 ]; then
+        echo "Enter string"
+        read str1
+        copy=$str1
+        echo $copy
+elif [ $choice == 3 ]; then
+        echo "Enter first string"
+        read str2
+        echo "Enter second string"
+        read str3
+        str4=$str2" "$str3
+        echo $str4
+elif [ $choice == 4 ]; then
+       echo "Enter first string"
+        read str4
+        echo "Enter Second string"
+        read str5
+        if [ $str4 == $str5 ]; then
+                echo "String is equal"
+        else
+                echo "String is not equal"
+        fi
+elif [ $choice == 5 ]; then
+        echo "Enter the string"
+        read str6
+        echo $str6 | rev
+else
+        echo "Invalid choice"
+fi
 	
 3.Write a shell script to rename all files in the current directory with numeric continuous value(Warning: Do this in a personal folder. Don't use Home directory) 
 Ans:-	for (( i=1; i<=10; i++ ))
